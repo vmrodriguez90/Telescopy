@@ -9,6 +9,7 @@ token = os.environ['TELEGRAM_TOKEN']
 cloud_convert_token = os.environ['CLOUD_CONVERT_TOKEN']
 
 
+logging.info("STARTING APPLICATION NOW "+ token)
 bot = telebot.AsyncTeleBot(token)
 
 
@@ -51,7 +52,7 @@ def check_dimensions(message):
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    logging.info("START: This is working");
+    logging.info("START: This is working")
     task = bot.send_message(message.chat.id, strings[lang(message)]['start'].format(
         message.from_user.first_name, 'https://telegram.org/update'),
                             parse_mode='HTML', disable_web_page_preview=True)
@@ -63,7 +64,7 @@ def start(message):
 
 @bot.message_handler(commands=['help'])
 def help(message):
-    logging.info("HELP: This is working");
+    logging.info("HELP: This is working")
     task = bot.send_message(message.chat.id, strings[lang(message)]['help'],
                             parse_mode='HTML', disable_web_page_preview=False)
     #mp.track(message.from_user.id, 'help', properties={'language': message.from_user.language_code})
@@ -73,7 +74,7 @@ def help(message):
 
 @bot.message_handler(content_types=['video', 'document'])
 def converting(message):
-    logging.info("CONVERT: This is working ");
+    logging.info("CONVERT: This is working ")
     if message.content_type is 'video':
         if check_size(message):
             if check_dimensions(message):
