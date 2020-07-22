@@ -1,1 +1,1 @@
-bot: python3 telesco.py
+web: python3 telesco.py

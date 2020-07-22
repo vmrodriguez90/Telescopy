@@ -6,7 +6,7 @@ import ujson
 import requests
 token = os.environ['TELEGRAM_TOKEN']
 cloud_convert_token = os.environ['CLOUD_CONVERT_TOKEN']
-# me = os.environ['CREATOR_ID']
+
 
 bot = telebot.AsyncTeleBot(token)
 
