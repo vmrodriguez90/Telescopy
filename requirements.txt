@@ -1,5 +1,5 @@
 pyTelegramBotAPI
 requests
-ujson
-cloudconvert
+# ujson
+# cloudconvert
 
